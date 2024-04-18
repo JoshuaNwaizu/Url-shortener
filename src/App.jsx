@@ -4,6 +4,8 @@ import NavBar from "./NavBar/NavBar";
 import NavLists from "./NavBar/NavLists";
 import NavMenu from "./NavBar/NavMenu";
 import NavToggle from "./NavBar/NavToggle";
+import Home from "./Home/Home";
+import HomeImg from "./Home/HomeImg";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +22,9 @@ function App() {
           <NavToggle isOpen={isOpen} onOpenNav={handleOpenNav} />
         </NavMenu>
       </NavBar>
+      <Home>
+        <HomeImg />
+      </Home>
     </>
   );
 }

@@ -6,8 +6,8 @@ const NavLists = ({ onOpen }) => {
     <div
       className={
         onOpen
-          ? "w-full absolute top-[5rem] left-0 transition-all duration-500"
-          : "w-full absolute -top-[25rem] left-0 transition-all duration-300"
+          ? "w-full absolute max-[1023px]:top-[5rem] min-[1024px]:top-0 left-0 transition-all duration-500"
+          : "w-full absolute max-[1023px]:-top-[27rem] left-0 top-[1rem]  transition-all duration-300"
       }
     >
       <Lists />
