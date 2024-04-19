@@ -12,7 +12,7 @@ const NavToggle = ({ isOpen, onOpenNav }) => {
       }
       onClick={() => onOpenNav()}
     >
-      {isOpen ? <IoCloseSharp /> : <AiOutlineMenu />}
+      {isOpen ? <IoCloseSharp /> : <HiMenu />}
     </div>
   );
 };

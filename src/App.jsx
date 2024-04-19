@@ -1,52 +1,86 @@
 import { useState } from "react";
-import Logo from "./NavBar/Logo";
-import NavBar from "./NavBar/NavBar";
-import NavLists from "./NavBar/NavLists";
-import NavMenu from "./NavBar/NavMenu";
-import NavToggle from "./NavBar/NavToggle";
-import Home from "./Home/Home";
-import HomeImg from "./Home/HomeImg";
-import HeroContainer from "./Home/HeroContainer";
-import Hero from "./Home/Hero";
-import Button from "./assets/Button";
-import FormContainer from "./URL form/FormContainer";
-import Form from "./URL form/Form";
-import LinkOutput from "./URL form/LinkOutput";
+import NavBarContainer from "./NavBar/NavBarContainer";
+import HomeView from "./Home/HomeView";
+import FormView from "./URL form/FormView";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+  const [input, setInput] = useState("");
+  const [getUrl, setGetUrl] = useState({ url: [] });
+  const [urlValue, setUrlValue] = useState("");
+  const [errMessage, setErrMessage] = useState(false);
+
+  const handleAddLinks = () => {
+    if (input.trim() === "") {
+      setErrMessage(true);
+      setTimeout(() => {
+        setErrMessage(false);
+      }, 4000);
+      return;
+    }
+
+    const shortenerApi = async (url) => {
+      try {
+        const res = await fetch(`https://tinyurl.com/api-create.php?url=${url}`);
+        if (!res.ok) throw new Error("Cant get link");
+
+        const data = await res.text();
+        setUrlValue(data);
+        return data;
+      } catch (err) {
+        console.error(`Error shortening url:`, err);
+      }
+    };
+
+    const shortenedURl = (url) => {
+      if (url.length < 30) {
+        return url;
+      }
+
+      const shortLink = url.split("").slice(0, 28).join("") + "...";
+      return shortLink;
+    };
+    const newLink = shortenedURl(input);
+
+    setGetUrl((prevUrl) => {
+      const newUrls = {
+        firstInput: newLink,
+        secondInput: urlValue,
+      };
+      return {
+        ...prevUrl,
+        url: [...prevUrl.url, newUrls],
+      };
+    });
+
+    shortenerApi(input);
+    setInput("");
+  };
+
+  const handleSetInput = (e) => {
+    setInput(e.target.value);
+  };
+
+  const handleAddUrlLink = () => {
+    handleAddLinks();
+    console.log("Clicked");
+  };
 
   const handleOpenNav = () => {
     setIsOpen((open) => !open);
   };
+
   return (
     <>
-      <NavBar>
-        <Logo />
-        <NavMenu>
-          <NavLists onOpen={isOpen} />
-          <NavToggle isOpen={isOpen} onOpenNav={handleOpenNav} />
-        </NavMenu>
-      </NavBar>
-      <Home>
-        <HomeImg />
-        <HeroContainer>
-          <Hero>
-            <Button style="bg-[#2BD0D0] py-3 w-[12rem] min-[1024px]:w-[10rem] rounded-[1.7rem] text-[20px] font-bold text-[#fff]" />
-          </Hero>
-        </HeroContainer>
-      </Home>
-      <FormContainer>
-        <Form>
-          <Button
-            style="bg-[#2BD0D0] py-3 w-[20.75rem] min-[1024px]:w-[10rem] rounded-lg text-[20px] font-bold text-[#fff]"
-            text="Shorten It!"
-          />
-        </Form>
-        <LinkOutput>
-          <Button />
-        </LinkOutput>
-      </FormContainer>
+      <NavBarContainer isOpen={isOpen} onOpenNav={handleOpenNav} />
+      <HomeView />
+      <FormView
+        onHandleClick={handleAddUrlLink}
+        input={input}
+        handleSetInput={handleSetInput}
+        getUrl={getUrl}
+        errMessage={errMessage}
+      />
     </>
   );
 }
