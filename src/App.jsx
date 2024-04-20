@@ -20,39 +20,38 @@ function App() {
     }
 
     const shortenerApi = async (url) => {
+      let data;
       try {
         const res = await fetch(`https://tinyurl.com/api-create.php?url=${url}`);
         if (!res.ok) throw new Error("Cant get link");
 
-        const data = await res.text();
+        data = await res.text();
         setUrlValue(data);
-        return data;
+        // return data;
       } catch (err) {
         console.error(`Error shortening url:`, err);
       }
-    };
+      const shortenedURl = (url) => {
+        if (url.length < 30) {
+          return url;
+        }
 
-    const shortenedURl = (url) => {
-      if (url.length < 30) {
-        return url;
-      }
-
-      const shortLink = url.split("").slice(0, 28).join("") + "...";
-      return shortLink;
-    };
-    const newLink = shortenedURl(input);
-
-    setGetUrl((prevUrl) => {
-      const newUrls = {
-        firstInput: newLink,
-        secondInput: urlValue,
+        const shortLink = url.split("").slice(0, 28).join("") + "...";
+        return shortLink;
       };
-      return {
-        ...prevUrl,
-        url: [...prevUrl.url, newUrls],
-      };
-    });
+      const newLink = shortenedURl(input);
 
+      setGetUrl((prevUrl) => {
+        const newUrls = {
+          firstInput: newLink,
+          secondInput: data,
+        };
+        return {
+          ...prevUrl,
+          url: [...prevUrl.url, newUrls],
+        };
+      });
+    };
     shortenerApi(input);
     setInput("");
   };
