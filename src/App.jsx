@@ -36,7 +36,7 @@ function App() {
           return url;
         }
 
-        const shortLink = url.split("").slice(0, 28).join("") + "...";
+        const shortLink = `${url.slice(0, 28)}...`;
         return shortLink;
       };
       const newLink = shortenedURl(input);
