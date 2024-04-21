@@ -37,6 +37,13 @@ const LinkOutput = ({ getUrl }) => {
               }`}
               onHandleClick={() => handleCopyLink(item.secondInput)}
             />
+            {/* <Button
+              text={item.isCopied ? "Copied" : "Copy"}
+              style={`bg-[#2BD0D0] py-3 w-[21rem] min-[1024px]:w-[10rem] rounded-md text-[20px] font-bold text-[#fff] ${
+                isCopied.includes(item.secondInput) && "bg-[#3A3054]"
+              }`}
+              onHandleClick={() => handleCopyLink(item.secondInput)}
+            /> */}
           </div>
         </div>
       ))}

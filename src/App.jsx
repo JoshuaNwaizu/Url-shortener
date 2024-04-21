@@ -7,7 +7,7 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
   const [getUrl, setGetUrl] = useState({ url: [] });
-  const [urlValue, setUrlValue] = useState("");
+  // const [urlValue, setUrlValue] = useState("");
   const [errMessage, setErrMessage] = useState(false);
 
   const handleAddLinks = () => {
@@ -26,7 +26,7 @@ function App() {
         if (!res.ok) throw new Error("Cant get link");
 
         data = await res.text();
-        setUrlValue(data);
+        // setUrlValue(data);
         // return data;
       } catch (err) {
         console.error(`Error shortening url:`, err);
@@ -45,6 +45,7 @@ function App() {
         const newUrls = {
           firstInput: newLink,
           secondInput: data,
+          isCopied: false,
         };
         return {
           ...prevUrl,
