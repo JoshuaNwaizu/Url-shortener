@@ -11,7 +11,6 @@ const FormView = ({
   getUrl,
   errMessage,
   urlErr,
-  isLoading,
 }) => {
   return (
     <>

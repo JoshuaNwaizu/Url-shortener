@@ -16,7 +16,7 @@ const LinkOutput = ({ getUrl, urlErr }) => {
   };
 
   return (
-    <div className="mx-5 -translate-y-[6.5rem] flex flex-col">
+    <div className="mx-5 -translate-y-[6.5rem] flex flex-col ">
       {getUrl.url.map((item) => (
         <div
           className="bg-[#fff] flex flex-col py-5 px-5 gap-3 mb-7 rounded-lg "
@@ -26,18 +26,30 @@ const LinkOutput = ({ getUrl, urlErr }) => {
             {item.firstInput}
           </p>
           <hr />
-          <p className="text-[1.2rem] tracking-[0.12px] font-medium leading-9 text-[#2BD0D0]">
+          <p
+            className={`text-[1.2rem] tracking-[0.12px] font-medium leading-9 text-[#2BD0D0] ${
+              !item.secondInput && "hidden"
+            }`}
+          >
             {item.secondInput}
           </p>
-          {/* <p>{urlErr}</p> */}
+          {!item.secondInput && (
+            <p className="text-[#F46363] text-[1.2rem] tracking-[0.12px] font-medium leading-9">
+              {urlErr}
+            </p>
+          )}
+
           <div className="flex items-center justify-center ">
             <Button
               text={isCopied.includes(item.secondInput) ? "Copied" : "Copy"}
-              style={`bg-[#2BD0D0] py-3 w-[21rem] min-[1024px]:w-[10rem] rounded-md text-[20px] font-bold text-[#fff] ${
+              style={`bg-[#2BD0D0] py-3 w-[21rem]  min-[1024px]:w-[10rem] rounded-md text-[20px] font-bold text-[#fff] ${
+                !item.secondInput && "opacity-40 "
+              } ${
                 isCopied.includes(item.secondInput) &&
                 "bg-[#3A3054] transition-all duration-500"
               }`}
               onHandleClick={() => handleCopyLink(item.secondInput)}
+              disabled={!item.secondInput && true}
             />
             {/* <Button
               text={item.isCopied ? "Copied" : "Copy"}

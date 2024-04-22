@@ -2,6 +2,7 @@ import { useState } from "react";
 import NavBarContainer from "./NavBar/NavBarContainer";
 import HomeView from "./Home/HomeView";
 import FormView from "./URL form/FormView";
+import ASview from "./Advanced Statistics/ASview";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,18 +16,18 @@ function App() {
       let data;
       try {
         const res = await fetch(`https://tinyurl.com/api-create.php?url=${url}`);
-        if (!res.ok) throw new Error("Can't get link for this");
+        if (!res.ok) throw new Error("Oops! Unable to fetch link...");
         data = await res.text();
       } catch (err) {
         setUrlErr(err.message);
-        console.error(`Error shortening url:`, err);
+        // console.error(`Error shortening url:`, err);
       }
 
       const shortenedURl = (url) => {
         if (url.length < 30) {
           return url;
         }
-        const shortLink = `${url.slice(0, 28)}...`;
+        const shortLink = `${url.slice(0, 27)}...`;
         return shortLink;
       };
 
@@ -86,6 +87,7 @@ function App() {
         errMessage={errMessage}
         urlErr={urlErr}
       />
+      <ASview />
     </>
   );
 }
