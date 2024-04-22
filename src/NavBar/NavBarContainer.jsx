@@ -5,14 +5,14 @@ import NavMenu from "./NavMenu";
 import NavLists from "./NavLists";
 import NavToggle from "./NavToggle";
 
-const NavBarContainer = ({ isOpen, onOpenNav }) => {
+const NavBarContainer = ({ isOpen, onOpenNav, setIsOpen }) => {
   return (
     <>
       {/* FIXME: Nav bar component */}
       <NavBar>
         <Logo />
         <NavMenu>
-          <NavLists onOpen={isOpen} />
+          <NavLists onOpen={isOpen} onOpenNav={onOpenNav} setIsOpen={setIsOpen} />
           <NavToggle isOpen={isOpen} onOpenNav={onOpenNav} />
         </NavMenu>
       </NavBar>

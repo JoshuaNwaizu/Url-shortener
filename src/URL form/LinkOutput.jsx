@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "../Button";
 
-const LinkOutput = ({ getUrl }) => {
+const LinkOutput = ({ getUrl, urlErr }) => {
   const [isCopied, setIsCopied] = useState([]);
 
   const handleCopyLink = (item) => {
@@ -29,11 +29,13 @@ const LinkOutput = ({ getUrl }) => {
           <p className="text-[1.2rem] tracking-[0.12px] font-medium leading-9 text-[#2BD0D0]">
             {item.secondInput}
           </p>
+          {/* <p>{urlErr}</p> */}
           <div className="flex items-center justify-center ">
             <Button
               text={isCopied.includes(item.secondInput) ? "Copied" : "Copy"}
               style={`bg-[#2BD0D0] py-3 w-[21rem] min-[1024px]:w-[10rem] rounded-md text-[20px] font-bold text-[#fff] ${
-                isCopied.includes(item.secondInput) && "bg-[#3A3054]"
+                isCopied.includes(item.secondInput) &&
+                "bg-[#3A3054] transition-all duration-500"
               }`}
               onHandleClick={() => handleCopyLink(item.secondInput)}
             />

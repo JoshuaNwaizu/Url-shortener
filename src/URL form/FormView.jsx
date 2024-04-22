@@ -4,7 +4,15 @@ import Form from "./Form";
 import LinkOutput from "./LinkOutput";
 import Button from "../Button";
 
-const FormView = ({ onHandleClick, input, handleSetInput, getUrl, errMessage }) => {
+const FormView = ({
+  onHandleClick,
+  input,
+  handleSetInput,
+  getUrl,
+  errMessage,
+  urlErr,
+  isLoading,
+}) => {
   return (
     <>
       <FormContainer>
@@ -15,7 +23,7 @@ const FormView = ({ onHandleClick, input, handleSetInput, getUrl, errMessage }) 
             onHandleClick={onHandleClick}
           />
         </Form>
-        <LinkOutput getUrl={getUrl} />
+        <LinkOutput getUrl={getUrl} urlErr={urlErr} />
       </FormContainer>
     </>
   );

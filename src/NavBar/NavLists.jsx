@@ -1,7 +1,7 @@
 import React from "react";
 import Lists from "./Lists";
 
-const NavLists = ({ onOpen }) => {
+const NavLists = ({ onOpen, onOpenNav, setIsOpen }) => {
   return (
     <div
       className={
@@ -10,7 +10,7 @@ const NavLists = ({ onOpen }) => {
           : "w-full absolute max-[1023px]:-top-[27rem] left-0 top-[1rem]  transition-all duration-300"
       }
     >
-      <Lists />
+      <Lists onOpenNav={onOpenNav} onOpen={onOpen} setIsOpen={setIsOpen} />
     </div>
   );
 };

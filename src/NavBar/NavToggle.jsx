@@ -1,5 +1,4 @@
 import React from "react";
-import { AiOutlineMenu } from "react-icons/ai";
 import { IoCloseSharp } from "react-icons/io5";
 import { HiMenu } from "react-icons/hi";
 const NavToggle = ({ isOpen, onOpenNav }) => {

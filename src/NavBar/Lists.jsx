@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../Button";
+import { Link } from "react-scroll";
 
 const navListsItems = [
   {
@@ -7,7 +8,7 @@ const navListsItems = [
     login: "Login",
   },
 ];
-const Lists = () => {
+const Lists = ({ setIsOpen }) => {
   return (
     <>
       {navListsItems.map((item, index) => (
@@ -21,15 +22,19 @@ const Lists = () => {
                 <li
                   key={index}
                   className="min-[1024px]:text-[#9E9AA8] min-[1024px]:hover:text-[#34313D] min-[1024px]:transition-all min-[1024px]:duration-200 cursor-pointer "
+                  onClick={() => setIsOpen(false)}
                 >
-                  <p className="">{list}</p>
+                  <p typeof="button">{list}</p>
                 </li>
               ))}
             </div>
             <hr className="max-[1023px]:w-[20rem] " />
             <div className="flex cursor-pointer max-[1023px]:flex-col min-[1024px]:flex-row items-center gap-7 min-[1024px]:text-[#9E9AA8] min-[1024px]:hover:text-[#34313D] min-[1024px]:transition-all min-[1024px]:duration-200">
-              <p> {item.login}</p>
-              <Button text="Sign Up" />
+              <p onClick={() => setIsOpen(false)} typeof="button">
+                {" "}
+                {item.login}
+              </p>
+              <Button text="Sign Up" onHandleClick={() => setIsOpen(false)} />
             </div>
           </ul>
         </div>
