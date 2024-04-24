@@ -3,6 +3,9 @@ import NavBarContainer from "./NavBar/NavBarContainer";
 import HomeView from "./Home/HomeView";
 import FormView from "./URL form/FormView";
 import ASview from "./Advanced Statistics/ASview";
+import Boost from "./Boost/Boost";
+import Button from "./Button";
+import FooterView from "./Footer/FooterView";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,10 +19,11 @@ function App() {
       let data;
       try {
         const res = await fetch(`https://tinyurl.com/api-create.php?url=${url}`);
-        if (!res.ok) throw new Error("Oops! Unable to fetch link...");
+        if (!res.ok) throw new Error("Oops! Unable to shorten link...");
         data = await res.text();
       } catch (err) {
         setUrlErr(err.message);
+        console.log(err.message);
         // console.error(`Error shortening url:`, err);
       }
 
@@ -88,6 +92,10 @@ function App() {
         urlErr={urlErr}
       />
       <ASview />
+      <Boost>
+        <Button style="bg-[#2BD0D0] py-3 w-[12rem] min-[1024px]:w-[10rem] rounded-[1.7rem] text-[20px] font-bold text-[#fff]" />
+      </Boost>
+      <FooterView />
     </>
   );
 }
