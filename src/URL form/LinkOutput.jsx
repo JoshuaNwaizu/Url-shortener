@@ -44,7 +44,7 @@ const LinkOutput = ({ getUrl, urlErr }) => {
             <div className="flex items-center justify-center">
               <Button
                 text={isCopied.includes(item.secondInput) ? "Copied!" : "Copy"}
-                style={`bg-[#2BD0D0] py-3 w-[19rem]  min-[1024px]:w-[10rem] rounded-md text-[20px] font-bold text-[#fff] min-[768px]:w-[15rem] min-[884px]:w-[9rem] min-[1024px]:py-2 ${
+                style={`bg-[#2BD0D0] py-3 w-[20rem]  min-[1024px]:w-[10rem] rounded-md text-[20px] font-bold text-[#fff] min-[768px]:w-[15rem] min-[884px]:w-[9rem] min-[1024px]:py-2 ${
                   !item.secondInput && "opacity-40 "
                 } ${
                   isCopied.includes(item.secondInput) &&
