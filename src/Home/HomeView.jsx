@@ -13,7 +13,7 @@ const HomeView = () => {
         <HomeImg />
         <HeroContainer>
           <Hero>
-            <Button style="bg-[#2BD0D0] py-3 w-[12rem] min-[1024px]:w-[10rem] rounded-[1.7rem] text-[20px] font-bold text-[#fff]" />
+            <Button style="bg-[#2BD0D0] py-3 w-[12rem] min-[1024px]:w-[13rem] rounded-[1.7rem] text-[20px] font-bold text-[#fff]  " />
           </Hero>
         </HeroContainer>
       </Home>

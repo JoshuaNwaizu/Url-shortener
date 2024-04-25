@@ -6,9 +6,7 @@ const statistics = [
     description:
       "Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.",
     img: "/images/icon-brand-recognition.svg",
-    line: false,
   },
-
   {
     title: "Detailed Records",
     description:
@@ -27,7 +25,7 @@ const statistics = [
 
 const ASCards = () => {
   return (
-    <div className="mx-6 mt-24 mb-12">
+    <div className="mx-6 mt-24 mb-12  min-[768px]:mx-10 min-[820px]:mx-14 min-[884px]:mx-[5rem]">
       <div className="flex flex-col items-center justify-center gap-[6rem]">
         {statistics.map((item) => (
           <div key={item.description}>
@@ -46,8 +44,9 @@ const ASCards = () => {
                       : undefined
                   }
                 ></div>
+
                 <figure className="bg-[#3A3054] p-6 rounded-full -translate-y-[5rem]">
-                  <img src={item.img} alt={item.name} className="" />
+                  <img src={item.img} alt={item.name} />
                 </figure>
               </div>
               <div
@@ -55,8 +54,12 @@ const ASCards = () => {
                   item.line ? "mt-[-8rem]" : undefined
                 }`}
               >
-                <h1 className="text-2xl font-bold text-[#34313D]">{item.title}</h1>
-                <p className="text-center text-[#9E9AA8]">{item.description}</p>
+                <h1 className="text-2xl font-bold text-[#34313D]  min-[768px]:text-3xl">
+                  {item.title}
+                </h1>
+                <p className="text-center text-[#a8a4b3]  min-[768px]:text-xl  min-[768px]:px-4">
+                  {item.description}
+                </p>
               </div>
             </div>
           </div>

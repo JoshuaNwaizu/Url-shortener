@@ -7,7 +7,7 @@ const Logo = () => {
       <img
         src="/logo.svg"
         alt="Shortly logo"
-        className="h-[2.1rem] flex items-center justify-center z-10"
+        className="h-[2.1rem] mt-3 flex items-center justify-center z-10 "
       />
     </div>
   );
