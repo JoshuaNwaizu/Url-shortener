@@ -20,9 +20,10 @@ function App() {
       try {
         const res = await fetch(`https://tinyurl.com/api-create.php?url=${url}`);
         if (!res.ok) throw new Error("Oops! Unable to shorten link...");
+        // if (res.status !== 200) throw new Error("Not a valid link");
         data = await res.text();
       } catch (err) {
-        setUrlErr(err.message);
+        setUrlErr(`${err.message}`);
         console.log(err.message);
         // console.error(`Error shortening url:`, err);
       }

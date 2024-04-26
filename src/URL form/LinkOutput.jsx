@@ -15,7 +15,7 @@ const LinkOutput = ({ getUrl, urlErr }) => {
     }, 10000);
   };
   return (
-    <div className="mx-5 -translate-y-[6.5rem] flex flex-col min-[768px]:-translate-y-[5rem]  min-[768px]:mx-9 min-[820px]:mx-14  min-[884px]:mx-10 min-[884px]:justify-between ">
+    <div className="mx-5 -translate-y-[6.5rem] flex flex-col min-[768px]:-translate-y-[5rem]  min-[768px]:mx-9 min-[820px]:mx-14  min-[884px]:mx-10 min-[884px]:justify-between min-[1024px]:mx-16">
       {getUrl.url.map((item) => (
         <div
           className="bg-[#fff] flex flex-col py-5 px-5 gap-3 mb-7 rounded-lg  min-[768px]:items-center  min-[768px]:justify-center min-[884px]:flex-row  min-[884px]:justify-between  min-[1024px]:py-3 min-[1024px]:px-7  min-[1024px]:mb-4"
@@ -48,7 +48,7 @@ const LinkOutput = ({ getUrl, urlErr }) => {
                   !item.secondInput && "opacity-40 "
                 } ${
                   isCopied.includes(item.secondInput) &&
-                  "bg-[#3A3054] transition-all duration-300"
+                  "bg-[#3A3054] transition-all duration-150"
                 }`}
                 onHandleClick={() => handleCopyLink(item.secondInput)}
                 disabled={!item.secondInput && true}

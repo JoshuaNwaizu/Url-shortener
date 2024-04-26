@@ -26,8 +26,10 @@ const footerData = [
 const FooterFeatures = () => {
   return (
     <footer>
-      <div className="flex flex-col items-center justify-center gap-[3.5rem]">
-        <h1 className="text-[2.7rem] font-bold text-[#FFF]">Shortly</h1>
+      <div className="flex flex-col items-center justify-center gap-[3.5rem] min-[1024px]:flex-row min-[1024px]:gap-[7-rem] min-[1024px]:items-start min-[1024px]:translate-y-10">
+        <h1 className="text-[2.7rem] font-bold text-[#fff] min-[1024px]:-mt-4">
+          Shortly
+        </h1>
         <div className="flex flex-col items-center justify-center gap-6  min-[768px]:flex-row  min-[768px]:gap-[8rem]  min-[768px]:items-start">
           {footerData.map((item) => (
             <div

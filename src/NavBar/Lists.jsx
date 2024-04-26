@@ -35,7 +35,7 @@ const Lists = ({ setIsOpen }) => {
                 {item.login}
               </p>
               <Button
-                style="bg-[#2BD0D0] py-3 w-[18rem] min-[1024px]:w-[9rem] rounded-[1.7rem] text-[20px] font-bold text-[#fff]"
+                style="bg-[#2BD0D0] py-3 w-[18rem] min-[1024px]:w-[9rem] rounded-[1.7rem] text-[20px] font-bold text-[#fff] min-[1024px]:py-2"
                 text="Sign Up"
                 onHandleClick={() => setIsOpen(false)}
               />

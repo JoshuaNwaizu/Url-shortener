@@ -1,6 +1,6 @@
 const Form = ({ children, input, handleSetInput, errMessage }) => {
   return (
-    <div className="bg-[url('/images/bg-shorten-mobile.svg')] bg-[#3A3054] p-10 mx-6 flex flex-col items-center justify-center px-5 gap-5 rounded-lg bg-[length:450px_150px] bg-no-repeat mb-9 -translate-y-[6rem]  min-[768px]:flex-row  min-[768px]:bg-[url('/images/bg-shorten-desktop.svg')]   min-[768px]:bg-[length:850px_150px]  min-[768px]:-translate-y-[4rem]  min-[768px]:mx-8  min-[820px]:mx-14 min-[884px]:mx-10 min-[884px]:p-9  min-[1024px]:bg-[length:950px_150px] ">
+    <div className="bg-[url('/images/bg-shorten-mobile.svg')] bg-[#3A3054] p-10 mx-6 flex flex-col items-center justify-center px-5 gap-5 rounded-lg bg-[length:450px_150px] bg-no-repeat mb-9 -translate-y-[6rem]  min-[768px]:flex-row  min-[768px]:bg-[url('/images/bg-shorten-desktop.svg')]   min-[768px]:bg-[length:850px_150px]  min-[768px]:-translate-y-[4rem]  min-[768px]:mx-8  min-[820px]:mx-14 min-[884px]:mx-10 min-[884px]:p-9  min-[1024px]:bg-[length:950px_150px] min-[1024px]:mx-16">
       <div className="flex flex-col justify-center">
         <input
           type="text"
