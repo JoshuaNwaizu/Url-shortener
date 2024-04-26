@@ -21,7 +21,7 @@ const footerImages = [
 
 const FooterSocials = () => {
   return (
-    <div className="mt-[4rem] mb-12">
+    <div className="mt-[4rem] mb-12 min-[1280px]:mt-[3rem]">
       <div className="flex flex-row items-center justify-center gap-6">
         {footerImages.map((img) => (
           <div key={img.urls}>

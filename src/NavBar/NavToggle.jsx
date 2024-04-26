@@ -6,7 +6,7 @@ const NavToggle = ({ isOpen, onOpenNav }) => {
     <div
       className={
         isOpen
-          ? "text-4xl text-[#9E9AA8] rotate-180 duration-500 font-bold min-[1024px]:hidden"
+          ? "text-4xl text-[#9E9AA8] rotate-90 duration-500 font-bold min-[1024px]:hidden"
           : "text-4xl text-[#9E9AA8] -rotate-130 duration-500 font-bold min-[1024px]:hidden"
       }
       onClick={() => onOpenNav()}

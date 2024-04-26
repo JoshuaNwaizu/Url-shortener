@@ -26,7 +26,7 @@ const statistics = [
 
 const ASCards = () => {
   return (
-    <div className="mx-6 mt-24 mb-12  min-[768px]:mx-10 min-[820px]:mx-14 min-[884px]:mx-[5rem] min-[1024px]:mb-[10rem]">
+    <div className="mx-6 mt-24 mb-12  min-[768px]:mx-10 min-[820px]:mx-14 min-[884px]:mx-[5rem] min-[1024px]:mb-[10rem] min-[1280px]:mx-[8rem] ">
       <div className="flex flex-col items-center justify-center gap-[6rem] min-[1024px]:flex-row min-[1024px]:gap-[2rem]">
         {statistics.map((item) => (
           <div key={item.description}>
@@ -34,7 +34,7 @@ const ASCards = () => {
               className={
                 item.line
                   ? `bg-[#2BD0D0] min-[1024px]:h-[8px] min-[1024px]:w-[2rem] min-[1024px]:translate-y-[9rem] min-[1024px]:translate-x-[-2rem] ${
-                      item.top && "min-[1024px]:translate-y-[9.5rem]"
+                      item.top && "min-[1024px]:translate-y-[10rem]"
                     } `
                   : undefined
               }

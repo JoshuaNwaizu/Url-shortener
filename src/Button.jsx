@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const styles =
   " bg-[#2BD0D0] py-3 w-[18rem] min-[1024px]:w-[10rem] rounded-[1.7rem] text-[20px] font-bold text-[#fff]";
@@ -11,9 +12,14 @@ const Button = ({
 }) => {
   return (
     <div>
-      <button className={style} onClick={onHandleClick} disabled={disabled}>
+      <motion.button
+        whileHover={{ backgroundColor: "#9AE3E3" }}
+        className={style}
+        onClick={onHandleClick}
+        disabled={disabled}
+      >
         {text}
-      </button>
+      </motion.button>
     </div>
   );
 };

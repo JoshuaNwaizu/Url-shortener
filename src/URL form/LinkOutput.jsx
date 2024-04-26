@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "../Button";
+import { motion } from "framer-motion";
 
 const LinkOutput = ({ getUrl, urlErr }) => {
   const [isCopied, setIsCopied] = useState([]);
@@ -15,9 +16,11 @@ const LinkOutput = ({ getUrl, urlErr }) => {
     }, 10000);
   };
   return (
-    <div className="mx-5 -translate-y-[6.5rem] flex flex-col min-[768px]:-translate-y-[5rem]  min-[768px]:mx-9 min-[820px]:mx-14  min-[884px]:mx-10 min-[884px]:justify-between min-[1024px]:mx-16">
+    <div className="mx-5 -translate-y-[6.5rem] flex flex-col min-[768px]:-translate-y-[5rem]  min-[768px]:mx-9 min-[820px]:mx-14  min-[884px]:mx-10 min-[884px]:justify-between min-[1024px]:mx-16 min-[1280px]:mx-[8.5rem]">
       {getUrl.url.map((item) => (
-        <div
+        <motion.div
+          initial={{ y: "-100vh" }}
+          animate={{ y: 0 }}
           className="bg-[#fff] flex flex-col py-5 px-5 gap-3 mb-7 rounded-lg  min-[768px]:items-center  min-[768px]:justify-center min-[884px]:flex-row  min-[884px]:justify-between  min-[1024px]:py-3 min-[1024px]:px-7  min-[1024px]:mb-4"
           key={item.secondInput + item.firstInput}
         >
@@ -41,7 +44,12 @@ const LinkOutput = ({ getUrl, urlErr }) => {
                 {urlErr}
               </p>
             )}
-            <div className="flex items-center justify-center">
+            <motion.div
+              initial={{ x: "-100vw" }}
+              animate={{ x: 0 }}
+              transition={{ delay: 0.3 }}
+              className="flex items-center justify-center"
+            >
               <Button
                 text={isCopied.includes(item.secondInput) ? "Copied!" : "Copy"}
                 style={`bg-[#2BD0D0] py-3 w-[20rem]  min-[1024px]:w-[10rem] rounded-md text-[20px] font-bold text-[#fff] min-[768px]:w-[15rem] min-[884px]:w-[9rem] min-[1024px]:py-2 ${
@@ -53,9 +61,9 @@ const LinkOutput = ({ getUrl, urlErr }) => {
                 onHandleClick={() => handleCopyLink(item.secondInput)}
                 disabled={!item.secondInput && true}
               />
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

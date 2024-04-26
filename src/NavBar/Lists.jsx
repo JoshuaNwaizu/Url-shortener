@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../Button";
-import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 
 const navListsItems = [
   {
@@ -29,16 +29,21 @@ const Lists = ({ setIsOpen }) => {
               ))}
             </div>
             <hr className="max-[1023px]:w-[20rem] " />
-            <div className="flex cursor-pointer max-[1023px]:flex-col min-[1024px]:flex-row items-center gap-7 min-[1024px]:text-[#9E9AA8] min-[1024px]:hover:text-[#34313D] min-[1024px]:transition-all min-[1024px]:duration-200">
-              <p onClick={() => setIsOpen(false)} typeof="button">
+            <div className="flex  max-[1023px]:flex-col min-[1024px]:flex-row items-center gap-7 min-[1024px]:text-[#9E9AA8]  min-[1024px]:transition-all min-[1024px]:duration-200 min-[1280px]:mr-[2rem]">
+              <p
+                className="cursor-pointer min-[1024px]:hover:text-[#34313D]"
+                onClick={() => setIsOpen(false)}
+              >
                 {" "}
                 {item.login}
               </p>
-              <Button
-                style="bg-[#2BD0D0] py-3 w-[18rem] min-[1024px]:w-[9rem] rounded-[1.7rem] text-[20px] font-bold text-[#fff] min-[1024px]:py-2"
-                text="Sign Up"
-                onHandleClick={() => setIsOpen(false)}
-              />
+              <div>
+                <Button
+                  style="bg-[#2BD0D0] py-3 w-[18rem] min-[1024px]:w-[9rem] rounded-[1.7rem] text-[20px] font-bold text-[#fff] min-[1024px]:py-2"
+                  text="Sign Up"
+                  onHandleClick={() => setIsOpen(false)}
+                />
+              </div>
             </div>
           </ul>
         </div>

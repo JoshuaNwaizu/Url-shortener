@@ -26,7 +26,7 @@ const footerData = [
 const FooterFeatures = () => {
   return (
     <footer>
-      <div className="flex flex-col items-center justify-center gap-[3.5rem] min-[1024px]:flex-row min-[1024px]:gap-[7-rem] min-[1024px]:items-start min-[1024px]:translate-y-10">
+      <div className="flex flex-col items-center justify-center gap-[3.5rem] min-[1024px]:flex-row min-[1024px]:gap-[7-rem] min-[1024px]:items-start min-[1024px]:translate-y-10 min-[1280px]:gap-[6rem]">
         <h1 className="text-[2.7rem] font-bold text-[#fff] min-[1024px]:-mt-4">
           Shortly
         </h1>
