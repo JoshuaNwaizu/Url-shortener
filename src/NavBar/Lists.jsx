@@ -31,10 +31,9 @@ const Lists = ({ setIsOpen }) => {
             <hr className="max-[1023px]:w-[20rem] " />
             <div className="flex  max-[1023px]:flex-col min-[1024px]:flex-row items-center gap-7 min-[1024px]:text-[#9E9AA8]  min-[1024px]:transition-all min-[1024px]:duration-200 min-[1280px]:mr-[2rem]">
               <p
-                className="cursor-pointer min-[1024px]:hover:text-[#34313D]"
+                className="cursor-pointer min-[1024px]:hover:text-[#34313D] transition-all duration-200"
                 onClick={() => setIsOpen(false)}
               >
-                {" "}
                 {item.login}
               </p>
               <div>

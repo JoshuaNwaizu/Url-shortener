@@ -47,6 +47,12 @@ const LinkOutput = ({ getUrl, urlErr }) => {
             <motion.div
               initial={{ x: "-100vw" }}
               animate={{ x: 0 }}
+              whileHover={{
+                x: !item.secondInput ? [0, 10, -10, 10, -10, 10, 0] : 0,
+              }}
+              whileTap={{
+                x: !item.secondInput ? [0, 10, -10, 10, -10, 10, 0] : 0,
+              }}
               transition={{ delay: 0.3 }}
               className="flex items-center justify-center"
             >
@@ -60,6 +66,8 @@ const LinkOutput = ({ getUrl, urlErr }) => {
                 }`}
                 onHandleClick={() => handleCopyLink(item.secondInput)}
                 disabled={!item.secondInput && true}
+                hover={item.secondInput && "#3A3054"}
+                tap={item.secondInput && "#3A3054"}
               />
             </motion.div>
           </div>
