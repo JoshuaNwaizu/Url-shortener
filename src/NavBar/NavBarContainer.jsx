@@ -9,7 +9,7 @@ const NavBarContainer = ({ isOpen, onOpenNav, setIsOpen }) => {
   return (
     <>
       {/* FIXME: Nav bar component */}
-      <NavBar>
+      <NavBar onOpenNav={onOpenNav}>
         <Logo />
         <NavMenu>
           <NavLists onOpen={isOpen} onOpenNav={onOpenNav} setIsOpen={setIsOpen} />
