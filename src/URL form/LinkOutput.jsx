@@ -16,7 +16,7 @@ const LinkOutput = ({ getUrl, urlErr }) => {
     }, 10000);
   };
   return (
-    <div className="mx-5 -translate-y-[6.5rem] flex flex-col min-[768px]:-translate-y-[5rem]  min-[768px]:mx-9 min-[820px]:mx-14  min-[884px]:mx-10 min-[884px]:justify-between min-[1024px]:mx-16 min-[1280px]:mx-[8.5rem]">
+    <div className="mx-5 -translate-y-[6.5rem] flex flex-col min-[768px]:-translate-y-[5rem]  min-[768px]:mx-9 min-[820px]:mx-14  min-[884px]:mx-10 min-[884px]:justify-between min-[1024px]:mx-16 min-[1280px]:mx-[8.5rem] min-[1400px]:mx-[12rem]">
       {getUrl.url.map((item) => (
         <motion.div
           initial={{ y: "-100vh" }}

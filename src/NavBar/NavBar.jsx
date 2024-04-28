@@ -8,7 +8,7 @@ const NavBar = ({ children }) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      setIsScrolled(scrollY >= 50); // Update state based on scroll position
+      setIsScrolled(scrollY >= 50);
     };
     window.addEventListener("scroll", handleScroll);
 
@@ -25,7 +25,7 @@ const NavBar = ({ children }) => {
         isScrolled ? "drop-shadow-xl transition-all duration-300" : undefined
       }`}
     >
-      <nav className="mx-6 flex flex-row items-center justify-between w-full  min-[768px]:mx-10  min-[1024px]:h-[6rem]  min-[1024px]:mx-[5.5rem] min-[1152px]:mx-[8rem] min-[884px]:mx-14 min-[1280px]:mx-[8.5rem]">
+      <nav className="mx-6 flex flex-row items-center justify-between w-full  min-[768px]:mx-14  min-[1024px]:h-[6rem]  min-[1024px]:mx-[5.5rem] min-[1152px]:mx-[8rem] min-[884px]:mx-14 min-[1280px]:mx-[8.5rem] min-[1400px]:mx-[10.5rem]">
         {children}
       </nav>
     </motion.header>
