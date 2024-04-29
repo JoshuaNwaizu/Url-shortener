@@ -4,7 +4,7 @@ import ASCards from "./ASCards";
 
 const ASview = () => {
   return (
-    <section>
+    <section id="statistics">
       <div className="bg-[#EFF1F7] mt-[-3rem] pb-7">
         <ASHero />
         <ASCards />

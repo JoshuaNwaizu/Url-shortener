@@ -6,6 +6,7 @@ import ASview from "./Advanced Statistics/ASview";
 import Boost from "./Boost/Boost";
 import Button from "./Button";
 import FooterView from "./Footer/FooterView";
+import { Link } from "react-scroll";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -94,7 +95,10 @@ function App() {
       />
       <ASview />
       <Boost>
-        <Button style="bg-[#2BD0D0] py-3 w-[12rem] min-[1024px]:w-[10rem] rounded-[1.7rem] text-[20px] font-bold text-[#fff]" />
+        <Link to="form" spy={true} smooth={true} offset={-120} duration={100}>
+          {" "}
+          <Button style="bg-[#2BD0D0] py-3 w-[12rem] min-[1024px]:w-[10rem] rounded-[1.7rem] text-[20px] font-bold text-[#fff]" />
+        </Link>
       </Boost>
       <FooterView />
     </>
