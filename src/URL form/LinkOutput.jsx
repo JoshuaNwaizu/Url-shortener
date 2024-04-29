@@ -40,7 +40,7 @@ const LinkOutput = ({ getUrl, urlErr }) => {
               {item.secondInput}
             </p>
             {!item.secondInput && (
-              <p className="text-[#F46363] text-[1.2rem] tracking-[0.12px] font-medium leading-9">
+              <p className="text-[#F46363] text-[1.2rem] max-[320px]:text-[.9rem] tracking-[0.12px] font-medium leading-9">
                 {urlErr}
               </p>
             )}
@@ -61,7 +61,7 @@ const LinkOutput = ({ getUrl, urlErr }) => {
             >
               <Button
                 text={isCopied.includes(item.secondInput) ? "Copied!" : "Copy"}
-                style={`bg-[#2BD0D0] py-3 w-[20rem]  min-[1024px]:w-[10rem] rounded-md text-[20px] font-bold text-[#fff] min-[768px]:w-[15rem] min-[884px]:w-[9rem] min-[1024px]:py-2 ${
+                style={`bg-[#2BD0D0] py-3 max-[320px]:w-[15rem] w-[20rem]  min-[1024px]:w-[10rem] rounded-md text-[20px] font-bold text-[#fff] min-[768px]:w-[15rem] min-[884px]:w-[9rem] min-[1024px]:py-2 ${
                   !item.secondInput && "opacity-40 "
                 } ${
                   isCopied.includes(item.secondInput) &&

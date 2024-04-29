@@ -73,7 +73,7 @@ const ASCards = () => {
                   item.line ? "mt-[-8rem] min-[1024px]:mt-[1rem]" : undefined
                 }`}
               >
-                <h1 className="text-2xl font-bold text-[#34313D]  min-[768px]:text-3xl min-[1024px]:text-xl min-[1024px]:text-center">
+                <h1 className="text-2xl font-bold text-[#34313D] max-[375px]:text-xl  min-[768px]:text-3xl min-[1024px]:text-xl min-[1024px]:text-center">
                   {item.title}
                 </h1>
                 <p className="text-center text-[#a8a4b3]  min-[768px]:text-xl  min-[768px]:px-4 min-[1024px]:text-xs min-[1024px]:text-left min-[1024px]:px-0">
