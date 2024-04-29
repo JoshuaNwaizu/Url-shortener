@@ -28,7 +28,7 @@ const LinkOutput = ({ getUrl, urlErr }) => {
             <p className="text-[1.2rem] tracking-[0.12px] font-medium leading-9 text-[#34313D]">
               {item.firstInput}
             </p>
-            <div className="max-[568px]:hidden h-8 w-1 bg-[#2BD0D0] min-[768px]:hidden"></div>
+            <div className="max-[568px]:hidden h-8 w-1 bg-[#2BD0D0] min-[720px]:hidden"></div>
             <hr className="  min-[768px]:min-[768px]:h-1  min-[768px]:w-[15rem]  min-[768px]:hidden" />
           </div>
           <div className="flex justify-center flex-col gap-3  min-[884px]:flex-row   min-[884px]:items-center ">
