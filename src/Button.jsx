@@ -9,14 +9,16 @@ const Button = ({
   text = "Get Started",
   onHandleClick,
   disabled,
-  hover = "#9AE3E3",
-  tap,
+  hover,
+  // tap,
+  // focus,
 }) => {
   return (
     <div>
       <motion.button
         whileHover={{ backgroundColor: hover }}
-        whileTap={{ backgroundColor: tap }}
+        // whileTap={{ backgroundColor: tap }}
+        // whileFocus={{ backgroundColor: focus }}
         className={style}
         onClick={onHandleClick}
         disabled={disabled}

@@ -97,7 +97,10 @@ function App() {
       <Boost>
         <Link to="form" spy={true} smooth={true} offset={-120} duration={100}>
           {" "}
-          <Button style="bg-[#2BD0D0] py-3 w-[12rem] min-[1024px]:w-[10rem] rounded-[1.7rem] text-[20px] font-bold text-[#fff]" />
+          <Button
+            style="bg-[#2BD0D0] py-3 w-[12rem] min-[1024px]:w-[10rem] rounded-[1.7rem] text-[20px] font-bold text-[#fff]"
+            hover={"#9AE3E3"}
+          />
         </Link>
       </Boost>
       <FooterView />

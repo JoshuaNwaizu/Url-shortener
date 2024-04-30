@@ -69,8 +69,9 @@ const LinkOutput = ({ getUrl, urlErr }) => {
                 }`}
                 onHandleClick={() => handleCopyLink(item.secondInput)}
                 disabled={!item.secondInput && true}
-                hover={item.secondInput && "#3A3054"}
-                tap={isCopied.includes(item.secondInput) && "#3A3054"}
+                // hover={item.secondInput && "#3A3054"}
+                // tap={isCopied.includes(item.secondInput) && "#3A3054"}
+                // focus={isCopied.includes(item.secondInput) & "#3A3054"}
               />
             </motion.div>
           </div>

@@ -39,6 +39,7 @@ const Lists = ({ setIsOpen }) => {
                 <Button
                   style="bg-[#2BD0D0] max-[320px]:w-[14rem] py-3 w-[18rem] min-[1024px]:w-[9rem] rounded-[1.7rem] text-[20px] font-bold text-[#fff] min-[1024px]:py-2"
                   text="Sign Up"
+                  hover={"#9AE3E3"}
                   onHandleClick={() => setIsOpen(false)}
                 />
               </div>
