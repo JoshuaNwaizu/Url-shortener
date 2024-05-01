@@ -1,1 +1,1 @@
-# React + Vite
+# URL shortener application 
