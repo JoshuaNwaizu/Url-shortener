@@ -7,6 +7,7 @@ import Boost from "./Boost/Boost";
 import Button from "./Button";
 import FooterView from "./Footer/FooterView";
 import { Link } from "react-scroll";
+import ArrowToTop from "./ArrowToTop/ArrowToTop";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -104,6 +105,7 @@ function App() {
         </Link>
       </Boost>
       <FooterView />
+      <ArrowToTop />
     </>
   );
 }
