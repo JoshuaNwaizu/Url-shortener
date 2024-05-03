@@ -11,7 +11,7 @@ const ArrowToTop = () => {
     };
     window.addEventListener('scroll', handleArrowOpen);
   }),
-    [];
+    [isOpen];
 
   return (
     <div>
@@ -23,8 +23,10 @@ const ArrowToTop = () => {
         duration={100}
       >
         <div
-          className={` fixed right-[1rem] min-[884px]:right-[3rem] inline-flex bottom-[-50%] font-bold text-xl text-[#2BD0D0] bg-[#FFF] p-3 shadow-md rounded-lg ${
-            isOpen ? 'bottom-[4rem] transition-all duration-500' : undefined
+          className={` fixed right-[1rem] min-[884px]:right-[3rem] inline-flex bottom-[-50%] font-bold text-xl text-[#2BD0D0] bg-[#FFF] p-3 shadow-xl rounded-lg ${
+            isOpen
+              ? 'bottom-[4rem] transition-all duration-500 hover:p-4 hover:text-[1.3rem]'
+              : undefined
           }`}
         >
           <IoArrowUpOutline />
