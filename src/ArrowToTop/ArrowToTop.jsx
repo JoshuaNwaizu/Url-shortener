@@ -23,7 +23,7 @@ const ArrowToTop = () => {
         duration={100}
       >
         <div
-          className={` fixed right-[1rem] min-[884px]:right-[3rem] inline-flex bottom-[-50%] font-bold text-xl text-[#2BD0D0] bg-[#FFF] p-3 shadow-xl rounded-lg ${
+          className={` fixed right-[1rem] min-[884px]:right-[3rem] inline-flex bottom-[-50%] font-bold text-xl text-[#2BD0D0] bg-[#FFF] p-3 min-[1024px]:p-5 min-[1024px]:text-[1.5rem] shadow-xl rounded-lg ${
             isOpen ? 'bottom-[4rem] transition-all duration-500 ' : undefined
           }`}
         >
