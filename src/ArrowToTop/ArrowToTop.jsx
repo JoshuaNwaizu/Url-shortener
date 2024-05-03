@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { IoArrowUpOutline } from 'react-icons/io5';
-import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 
 const ArrowToTop = () => {
@@ -8,7 +7,7 @@ const ArrowToTop = () => {
   useEffect(() => {
     const handleArrowOpen = () => {
       const scrollY = window.scrollY;
-      setIsOpen(scrollY >= 50);
+      setIsOpen(scrollY >= 100);
     };
     window.addEventListener('scroll', handleArrowOpen);
   }),
@@ -23,15 +22,13 @@ const ArrowToTop = () => {
         offset={-120}
         duration={100}
       >
-        <motion.a
-          initial={{ y: isOpen && -250 }}
-          animate={{ y: isOpen && 0 }}
-          className={` fixed right-[1rem] inline-flex bottom-[-50%] font-bold text-xl text-[#2BD0D0] bg-[#FFF] p-3 shadow-md rounded-lg ${
-            isOpen ? 'bottom-[4rem] transition-all duration-300' : undefined
+        <div
+          className={` fixed right-[1rem] min-[884px]:right-[3rem] inline-flex bottom-[-50%] font-bold text-xl text-[#2BD0D0] bg-[#FFF] p-3 shadow-md rounded-lg ${
+            isOpen ? 'bottom-[4rem] transition-all duration-500' : undefined
           }`}
         >
           <IoArrowUpOutline />
-        </motion.a>
+        </div>
       </Link>
     </div>
   );
