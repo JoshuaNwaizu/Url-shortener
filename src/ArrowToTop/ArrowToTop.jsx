@@ -26,7 +26,6 @@ const ArrowToTop = () => {
         <motion.a
           initial={{ y: isOpen && -250 }}
           animate={{ y: isOpen && 0 }}
-          href=""
           className={` fixed right-[1rem] inline-flex bottom-[-50%] font-bold text-xl text-[#2BD0D0] bg-[#FFF] p-3 shadow-md rounded-lg ${
             isOpen ? 'bottom-[4rem] transition-all duration-300' : undefined
           }`}
