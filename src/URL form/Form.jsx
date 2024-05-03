@@ -10,7 +10,7 @@ const Form = ({ children, input, handleSetInput, errMessage }) => {
           placeholder="Shorten a link here..."
           className={`py-4 pl-6 rounded-lg w-[19rem]  placeholder:font-semibold max-[320px]:w-[14rem]  min-[768px]:w-[27rem] min-[884px]:w-[32rem] min-[1024px]:w-[41rem] min-[884px]:pl-4 min-[1400px]:w-[45rem]${
             errMessage &&
-            " border-[4px] border-solid border-[#F46363] placeholder:text-[#ebbbbb] placeholder:font-semibold"
+            ' border-[4px] border-solid border-[#F46363] placeholder:text-[#ebbbbb] placeholder:font-semibold'
           } focus:border-[4px] focus:border-[#2BD0D0] focus:outline-none transition-all duration-150`}
           value={input}
           onChange={handleSetInput}
