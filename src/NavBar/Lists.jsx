@@ -1,10 +1,11 @@
-import React from "react";
-import Button from "../Button";
+import React from 'react';
+import Button from '../Button';
+import { Link } from 'react-scroll';
 
 const navListsItems = [
   {
-    lists: ["Features", "Pricing", "Resources"],
-    login: "Login",
+    lists: ['Features', 'Pricing', 'Resources'],
+    login: 'Login',
   },
 ];
 const Lists = ({ setIsOpen }) => {
@@ -21,9 +22,21 @@ const Lists = ({ setIsOpen }) => {
                 <li
                   key={index}
                   className="min-[1024px]:text-[#9E9AA8] min-[1024px]:hover:text-[#34313D] min-[1024px]:transition-all min-[1024px]:duration-200 cursor-pointer "
-                  onClick={() => setIsOpen(false)}
                 >
-                  <p typeof="button">{list}</p>
+                  <Link
+                    to="home"
+                    spy={true}
+                    smooth={true}
+                    offset={-120}
+                    duration={100}
+                  >
+                    <p
+                      typeof="button"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {list}
+                    </p>
+                  </Link>
                 </li>
               ))}
             </div>
@@ -39,7 +52,7 @@ const Lists = ({ setIsOpen }) => {
                 <Button
                   style="bg-[#2BD0D0] max-[320px]:w-[14rem] py-3 w-[18rem] min-[1024px]:w-[9rem] rounded-[1.7rem] text-[20px] font-bold text-[#fff] min-[1024px]:py-2"
                   text="Sign Up"
-                  hover={"#9AE3E3"}
+                  hover={'#9AE3E3'}
                   onHandleClick={() => setIsOpen(false)}
                 />
               </div>
