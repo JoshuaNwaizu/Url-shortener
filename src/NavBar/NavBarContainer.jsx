@@ -1,19 +1,32 @@
-import React from "react";
-import NavBar from "./NavBar";
-import Logo from "./Logo";
-import NavMenu from "./NavMenu";
-import NavLists from "./NavLists";
-import NavToggle from "./NavToggle";
+import React, { useState } from 'react';
+import NavBar from './NavBar';
+import Logo from './Logo';
+import NavMenu from './NavMenu';
+import NavLists from './NavLists';
+import NavToggle from './NavToggle';
 
-const NavBarContainer = ({ isOpen, onOpenNav, setIsOpen }) => {
+const NavBarContainer = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpenNav = () => {
+    setIsOpen((open) => !open);
+  };
+
   return (
     <>
       {/* FIXME: Nav bar component */}
-      <NavBar onOpenNav={onOpenNav}>
+      <NavBar>
         <Logo />
         <NavMenu>
-          <NavLists onOpen={isOpen} onOpenNav={onOpenNav} setIsOpen={setIsOpen} />
-          <NavToggle isOpen={isOpen} onOpenNav={onOpenNav} />
+          <NavLists
+            onOpen={isOpen}
+            onOpenNav={handleOpenNav}
+            setIsOpen={setIsOpen}
+          />
+          <NavToggle
+            isOpen={isOpen}
+            onOpenNav={handleOpenNav}
+          />
         </NavMenu>
       </NavBar>
     </>

@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Lists from './Lists';
 
 const NavLists = ({ onOpen, onOpenNav, setIsOpen }) => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      if (scrollY >= 50) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup function to remove event listener on component unmount
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [setIsOpen]);
   return (
     <>
       <div

@@ -4,10 +4,25 @@ import { Link } from 'react-scroll';
 
 const navListsItems = [
   {
-    lists: ['Features', 'Pricing', 'Resources'],
+    lists: [
+      {
+        name: 'Features',
+        link: 'statistics',
+      },
+      {
+        name: 'Pricing',
+        link: 'home',
+      },
+      {
+        name: 'Resources',
+        link: 'home',
+      },
+    ],
+
     login: 'Login',
   },
 ];
+
 const Lists = ({ setIsOpen }) => {
   return (
     <>
@@ -24,7 +39,7 @@ const Lists = ({ setIsOpen }) => {
                   className="min-[1024px]:text-[#9E9AA8] min-[1024px]:hover:text-[#34313D] min-[1024px]:transition-all min-[1024px]:duration-200 cursor-pointer "
                 >
                   <Link
-                    to="home"
+                    to={list.link}
                     spy={true}
                     smooth={true}
                     offset={-120}
@@ -34,7 +49,7 @@ const Lists = ({ setIsOpen }) => {
                       typeof="button"
                       onClick={() => setIsOpen(false)}
                     >
-                      {list}
+                      {list.name}
                     </p>
                   </Link>
                 </li>

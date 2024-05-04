@@ -14,7 +14,8 @@ const NavBar = ({ children }) => {
 
     // Cleanup function to remove event listener on component unmount
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isScrolled]);
+
   return (
     <motion.header
       ref={headerRef}
