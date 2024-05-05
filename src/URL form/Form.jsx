@@ -1,18 +1,15 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
+import useFocus from '../useFocus';
 
 const Form = ({ children, input, handleSetInput, errMessage }) => {
   const inputEl = useRef(null);
 
-  useEffect(() => {
-    const inputCallBack = (e) => {
-      if (e.code === 'Enter') {
-        inputEl.current.focus();
-      }
-    };
-    document.addEventListener('keydown', inputCallBack);
+  function focus() {
+    inputEl.current.focus();
+  }
 
-    return () => document.addEventListener('keydown', inputCallBack);
-  }, []);
+  useFocus('Enter', focus);
+
   return (
     <div
       id="form"
