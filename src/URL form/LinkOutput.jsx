@@ -32,13 +32,16 @@ const LinkOutput = ({ getUrl, urlErr }) => {
             <hr className="  min-[768px]:min-[768px]:h-1  min-[768px]:w-[15rem]  min-[768px]:hidden" />
           </div>
           <div className="flex justify-center flex-col gap-3  min-[884px]:flex-row   min-[884px]:items-center ">
-            <p
-              className={`text-[1.2rem] tracking-[0.12px] font-medium leading-9 text-[#2BD0D0] ${
-                !item.secondInput && 'hidden'
-              }`}
-            >
-              {item.secondInput}
-            </p>
+            <a href={item.secondInput}>
+              <p
+                className={`text-[1.2rem] tracking-[0.12px] font-medium leading-9 text-[#2BD0D0] ${
+                  !item.secondInput && 'hidden'
+                }`}
+              >
+                {item.secondInput}
+              </p>
+            </a>
+
             {!item.secondInput && (
               <p className="text-[#F46363] text-[1.2rem] max-[320px]:text-[.9rem] tracking-[0.12px] font-medium leading-9">
                 {urlErr}
