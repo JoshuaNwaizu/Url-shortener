@@ -1,31 +1,31 @@
-import React from "react";
+import React from 'react';
 
 const footerData = [
   {
-    title: "Features",
-    link1: "Link Shortening",
-    link2: "Branded Links",
-    link3: "Analytics",
+    title: 'Features',
+    link1: 'Link Shortening',
+    link2: 'Branded Links',
+    link3: 'Analytics',
   },
   {
-    title: "Resources",
-    link1: "Blog",
-    link2: "Developers",
-    link3: "Support",
+    title: 'Resources',
+    link1: 'Blog',
+    link2: 'Developers',
+    link3: 'Support',
   },
   {
-    title: "Company",
-    link1: "About",
-    link2: "Our Team",
-    link3: "Careers",
-    link4: "Contact",
+    title: 'Company',
+    link1: 'About',
+    link2: 'Our Team',
+    link3: 'Careers',
+    link4: 'Contact',
     isLink4: true,
   },
 ];
 
 const FooterFeatures = () => {
   return (
-    <footer>
+    <div>
       <div className="flex flex-col items-center justify-center gap-[3.5rem] min-[1024px]:flex-row min-[1024px]:gap-[7-rem] min-[1024px]:items-start min-[1024px]:translate-y-10 min-[1280px]:gap-[6rem] min-[1400px]:gap-[11rem]">
         <h1 className="text-[2.7rem] font-bold text-[#fff] min-[1024px]:-mt-4">
           Shortly
@@ -47,7 +47,7 @@ const FooterFeatures = () => {
           ))}
         </div>
       </div>
-    </footer>
+    </div>
   );
 };
 
