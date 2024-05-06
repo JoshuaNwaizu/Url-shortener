@@ -82,36 +82,38 @@ function App() {
 
   return (
     <>
-      <NavBarContainer
-      // isOpen={isOpen}
-      // onOpenNav={handleOpenNav}
-      // setIsOpen={setIsOpen}
-      />
-      <HomeView />
-      <FormView
-        onHandleClick={handleAddUrlLink}
-        input={input}
-        handleSetInput={handleSetInput}
-        getUrl={getUrl}
-        errMessage={errMessage}
-        urlErr={urlErr}
-      />
-      <ASview />
-      <Boost>
-        <Link
-          to="form"
-          spy={true}
-          smooth={true}
-          offset={-120}
-          duration={100}
-        >
-          {' '}
-          <Button
-            style="bg-[#2BD0D0] py-3 w-[12rem] min-[1024px]:w-[10rem] rounded-[1.7rem] text-[20px] font-bold text-[#fff]"
-            hover={'#9AE3E3'}
-          />
-        </Link>
-      </Boost>
+      <main>
+        <NavBarContainer
+        // isOpen={isOpen}
+        // onOpenNav={handleOpenNav}
+        // setIsOpen={setIsOpen}
+        />
+        <HomeView />
+        <FormView
+          onHandleClick={handleAddUrlLink}
+          input={input}
+          handleSetInput={handleSetInput}
+          getUrl={getUrl}
+          errMessage={errMessage}
+          urlErr={urlErr}
+        />
+        <ASview />
+        <Boost>
+          <Link
+            to="form"
+            spy={true}
+            smooth={true}
+            offset={-120}
+            duration={100}
+          >
+            {' '}
+            <Button
+              style="bg-[#2BD0D0] py-3 w-[12rem] min-[1024px]:w-[10rem] rounded-[1.7rem] text-[20px] font-bold text-[#fff]"
+              hover={'#9AE3E3'}
+            />
+          </Link>
+        </Boost>
+      </main>
       <FooterView />
       <ArrowToTop />
     </>

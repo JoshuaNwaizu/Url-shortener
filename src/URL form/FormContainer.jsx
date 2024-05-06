@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 const FormContainer = ({ children }) => {
-  return <div className="bg-[#EFF1F7] mt-[11rem] ">{children}</div>;
+  return <section className="bg-[#EFF1F7] mt-[11rem] ">{children}</section>;
 };
 
 export default FormContainer;
